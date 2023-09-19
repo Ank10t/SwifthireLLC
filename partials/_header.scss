@@ -87,7 +87,7 @@ header {
         font-size: 3.5rem;
         line-height: 1.1;
         letter-spacing: -3px;
-        animation: fadeInUp 1s ease forwards;
+        animation: fadeInUp 10s ease forwards;
         // transform: translate(-50%, -50%);
         
       }
@@ -97,7 +97,8 @@ header {
         margin: 1rem 0 2rem;
         color: $light-color;
         font-size: 1.1rem;
-        animation: fadeInUp 1s ease forwards;
+        animation: fadeInUp 10s ease forwards;
+        
       }
     }
 
@@ -105,7 +106,8 @@ header {
       img {
         max-width: 100%;
         height: auto;
-        animation: zoomIn 1s ease forwards;
+        animation: zoomIn 10s ease forwards;
+                    
       }
     }
   }
