@@ -13,11 +13,33 @@ nav{
         justify-content: space-between;
         align-items: center;
 
+        a{
+            img{
+                height: 50px;
+                width: 50px;
+                z-index: -1;
+            }
+        }
+
         ul{
             display: flex;
             gap: 3rem;
             align-items: center;
+
+            li{
+                .btn{
+                    border: none;
+                }
+                &:hover{
+                    border-bottom: 1px solid white;
+                    transition: all 1s ease-in-out ;
+                }
+            }
         }
+
+        
+
+        
 // only needed in small and medium devices
 
 button{

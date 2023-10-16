@@ -1,86 +1,21 @@
-// header {
-//     @include gradientBackground;
-//     height: 100vh;
-
-
-// .container{
-//     height: 100%;
-//     display: grid;
-//     grid-template-columns: 46% 46%;
-//     gap:8%;
-//     align-items: center;
-//     justify-content: space-between;
-
-//     .header__content {
-//         h1{
-//             font-size: 3.5rem;
-//             line-height: 1.1;
-//             letter-spacing: -3px;
-//         }
-//         p{
-//             margin: 1rem 0 2rem;
-//             color: $light-color;
-//             font-size: 1.1rem;
-//         }
-//     }
-
-//     .header__imgage{
-//         img{
-
-//         }
-//     }
-
-
-// }
-// }
-
-// @media screen and (max-width : 1024px){
-//     header{
-
-//         height: 60vh;
-//         .container{
-//             font-size: 1.8rem;
-//             .header__content{
-//                 h1{
-//                     font-size: 2.2rem;
-//                 }
-
-//             }
-//         }
-//     }
-// }
-
-// @media screen and (max-width : 600px){
-//     header{
-//         height: 100vh;
-//         padding-top: 3rem;
-
-//         .container{
-//             grid-template-columns: 1fr;
-//             text-align: center;
-
-//             .header__content{
-//                 margin: 0.8rem 0 1.5rem;
-//                 line-height: 1.4;
-//             }
-
-//         }
-//     }
-// }
-
 
 
 header {
   @include gradientBackground;
-  height: 100vh;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
 
   .container {
-    height: 100%;
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: 46% 46%;
-    gap: 8%;
+    gap:8%;
     align-items: center;
     justify-content: space-between;
+
+    
 
     .header__content {
       h1 {
@@ -110,40 +45,70 @@ header {
                     
       }
     }
+
+    .elevator-transition{
+      animation: repeat 1s forwards;
+       animation-delay: 1s;
+         
+     }
+     
+     .elevator{
+     margin:5em 0;
+       color: #fff;
+       font-family:AvenirNextLTPro-Bold;
+       font-size: 3em;
+       display: grid;
+       grid-template-columns: auto auto;
+       grid-gap:10px;
+     
+     }
+     .elevatorL{
+       text-align: right;
+       left:5em;
+     }
+     .elevatorR{
+       left:10em;
+     }
+     @keyframes repeat{
+       100%{
+         filter: drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff);
+       }
+       
+     }
+     .elevatorL-transition{
+         animation: moveLeft .7s forwards;
+     /*   animation-delay:2s; */
+           animation-play-state: paused ;
+       animation-delay:  calc(var(--scroll) * -1s);
+     
+     }
+     .elevatorR-transition{
+         animation: moveRight .7s forwards;
+     /*     animation-delay:2s; */
+           animation-play-state: paused ;
+       animation-delay:  calc(var(--scroll) * -1s);
+     }
+     
+     @keyframes moveLeft {
+           0% {
+             transform: translateX(0px) rotate(0);
+       }
+       100%{
+           transform: translateX(-10em);
+       } 
+     }
+     @keyframes moveRight {
+           0% {
+             transform: translateX(0px) rotate(0);
+       }
+       100%{
+           transform: translateX(10em);
+       } 
+     }
+     
   }
 }
 
-// @keyframes animate {
-// 	0%,
-// 	100% {
-// 		clip-path: polygon(
-// 			0% 45%,
-// 			16% 44%,
-// 			33% 50%,
-// 			54% 60%,
-// 			70% 61%,
-// 			84% 59%,
-// 			100% 52%,
-// 			100% 100%,
-// 			0% 100%
-// 		);
-// 	}
-
-
-// 	50% {
-// 		clip-path: polygon(
-// 			0% 60%,
-// 			15% 65%,
-// 			34% 66%,
-// 			51% 62%,
-// 			67% 50%,
-// 			84% 45%,
-// 			100% 46%,
-// 			100% 100%,
-// 			0% 100%
-// 		);
-// 	}
-// }
 
 
 @keyframes fadeInUp {
@@ -168,35 +133,226 @@ header {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  header {
-    height: 60vh;
+@media screen and (max-width : 1024px){
+  header{
 
-    .container {
-      font-size: 1.8rem;
+      height: 60vh;
+      .container{
+          font-size: 1.8rem;
+          .header__content{
+              h1{
+                  font-size: 2.5rem;
+              }
 
-      .header__content {
-        h1 {
-          font-size: 2.2rem;
-        }
+          }
       }
-    }
   }
 }
 
-@media screen and (max-width: 600px) {
-  header {
+@media screen and (max-width : 600px){
+  header{
+    @include gradientBackground;
     height: 100vh;
-    padding-top: 3rem;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
 
-    .container {
-      grid-template-columns: 1fr;
-      text-align: center;
+      .container{
+          grid-template-columns: 1fr;
+          text-align: center;
 
-      .header__content {
-        margin: 0.8rem 0 1.5rem;
-        line-height: 1.4;
+          .header__content{
+              margin: 0.8rem 0 1.5rem;
+              line-height: 1.4;
+          }
+
+          .header__image{
+            display: none;
+            // margin-top: -50rem;
+          }
+
       }
-    }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// updated
+
+// header {
+//   @include gradientBackground;
+//   height: 100vh;
+
+//   .container {
+//     height: 100%;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive columns
+//     gap: 8%;
+//     align-items: center;
+//     justify-content: space-between;
+
+//     .header__content {
+//       h1 {
+//         font-size: 3.5rem;
+//         line-height: 1.1;
+//         letter-spacing: -3px;
+//         animation: fadeInUp 10s ease forwards;
+//       }
+
+//       p {
+//         margin: 1rem 0 2rem;
+//         color: $light-color;
+//         font-size: 1.1rem;
+//         animation: fadeInUp 10s ease forwards;
+//       }
+//     }
+
+//     .header__image {
+//       img {
+//         max-width: 100%;
+//         height: auto;
+//         animation: zoomIn 10s ease forwards;
+//       }
+//     }
+
+//     .elevator-transition {
+//       animation: repeat 1s forwards;
+//       animation-delay: 1s;
+//     }
+
+//     .elevator {
+//       margin: 5em 0;
+//       color: #fff;
+//       font-family: AvenirNextLTPro-Bold;
+//       font-size: 3em;
+//       display: grid;
+//       grid-template-columns: auto auto;
+//       grid-gap: 10px;
+//     }
+
+//     .elevatorL {
+//       text-align: right;
+//       left: 5em;
+//     }
+
+//     .elevatorR {
+//       left: 10em;
+//     }
+
+//     @keyframes repeat {
+//       100% {
+//         filter: drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff) drop-shadow(0 1em 0 #fff);
+//       }
+//     }
+
+//     .elevatorL-transition {
+//       animation: moveLeft .7s forwards;
+//       animation-play-state: paused;
+//       animation-delay: calc(var(--scroll) * -1s);
+//     }
+
+//     .elevatorR-transition {
+//       animation: moveRight .7s forwards;
+//       animation-play-state: paused;
+//       animation-delay: calc(var(--scroll) * -1s);
+//     }
+
+//     @keyframes moveLeft {
+//       0% {
+//         transform: translateX(0px) rotate(0);
+//       }
+//       100% {
+//         transform: translateX(-10em);
+//       }
+//     }
+
+//     @keyframes moveRight {
+//       0% {
+//         transform: translateX(0px) rotate(0);
+//       }
+//       100% {
+//         transform: translateX(10em);
+//       }
+//     }
+//   }
+
+//   @keyframes fadeInUp {
+//     from {
+//       opacity: 0;
+//       transform: translateY(20px);
+//     }
+//     to {
+//       opacity: 1;
+//       transform: translateY(0);
+//     }
+//   }
+
+//   @keyframes zoomIn {
+//     from {
+//       transform: scale(0.8);
+//     }
+//     to {
+//       transform: scale(1);
+//     }
+//   }
+
+//   @media screen and (max-width: 1024px) {
+//     header {
+//       height: 60vh;
+//       .container {
+//         font-size: 1.8rem;
+//         .header__content {
+//           h1 {
+//             font-size: 2.2rem;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   @media screen and (max-width: 600px) {
+//     header {
+//       height: 100vh;
+//       padding-top: 3rem;
+//       .container {
+//         grid-template-columns: 1fr;
+//         text-align: center;
+//         .header__content {
+//           margin: 0.8rem 0 1.5rem;
+//           line-height: 1.4;
+//         }
+//       }
+//     }
+//   }
+// }
+

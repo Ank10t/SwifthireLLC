@@ -14,6 +14,11 @@
             height: fit-content;
             transition: all 400ms ease;
 
+            img{
+                height: 50px;
+                width: 50px;
+            }
+
             &:hover{
                 margin-top: -0.5rem;
                 
