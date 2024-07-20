@@ -1,0 +1,134 @@
+nav{
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    @include gradientBackground;
+    box-shadow: 0 1rem 1rem rgba($black-color,0.1);
+    .container{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a{
+            img{
+                height: 70px;
+                width: 70px;
+                z-index: -1;
+            }
+        }
+
+        ul{
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+
+            li{
+                .btn{
+                    border: none;
+                }
+                &:hover{
+                    border-bottom: 1px solid white;
+                    transition: all 1s ease-in-out ;
+                }
+            }
+        }
+
+        
+
+        
+// only needed in small and medium devices
+
+button{
+    display: none;
+}
+
+        a{
+            color: $white-color;
+            font-weight: 400;
+            font-size: 0.9rem;
+
+        }
+
+        
+        
+    }
+}
+
+
+
+@media screen and (max-width : 1024px){
+    nav{
+        .container{
+
+            button{
+                display: inline-block;
+                background: transparent;
+                color: $white-color;
+                font-size: 2rem;
+                cursor: pointer;
+
+                &#close__nav-btn{
+                    display: none;
+                }
+            }
+            
+            ul{
+                display: inline-block;
+                background: transparent;
+                color: $white-color;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+            
+            
+            ul{
+                position: fixed;
+                right: 5%;
+                top: 5rem;
+                flex-direction: column;
+                align-items: start;
+                gap: 0;
+                display: none;
+                perspective: 300px;
+
+                li{
+                    width: 100%;
+                    opacity: 0;
+                    animation: flipNavItem 300ms ease forwards;
+                    transform-origin: top;
+
+                    @keyframes flipNavItem{
+                        0%{
+                            transform: rotateX(90deg);
+                        }
+                        100%{
+                            transform: rotateX(0deg);
+                            opacity: 1;
+                        }
+                    }
+                    a{
+                        color: $white-color;
+                        height: 100%;
+                        display: block;
+                        padding: 1.5rem 2rem;
+                        border-radius: 0;
+                        background:linear-gradient($primary-color-variant,darken($primary-color-variant,12%));
+                    };
+
+                    &.btn{
+                        background: $secondary-color;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

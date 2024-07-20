@@ -1,0 +1,21 @@
+@import './partials/config';
+@import './partials/mixins';
+@import './partials/general';
+@import './partials/nav';
+@import './partials/header';
+@import './partials/services';
+@import './partials/choose';
+@import './partials/client';
+@import './partials/contact';
+@import './partials/footer';
+
+#preLoader{
+    background:white url(/assets/preeee.gif) no-repeat center;
+    opacity: 1;
+    background-size: 20%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+

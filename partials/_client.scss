@@ -1,0 +1,82 @@
+.swiper {
+    width: $container-lg;
+
+
+    .swiper-wrapper {
+
+        .swiper-slide {
+            margin-bottom: 4rem;
+            @include gradientBackground;
+            // background: url('https://images.unsplash.com/photo-1509983165097-0c31a863e3f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80');
+            padding: 1.5rem 2rem;
+            border-radius: 1rem;
+            cursor: default;
+            font-size: 0.9 rem;
+// to move avatar left
+            &:hover{
+                // .avatar{
+                //         position: relative;
+                //         left: 300px;
+                    
+                //     }
+                
+
+                .avatar {
+                    position: relative;
+                    transition: transform 0.7s ease; /* Add a transition for smooth animation */
+                    transform: translateX(300px) scale(2);
+                    border: 1px solid $white-color;
+                    
+
+                }
+                opacity: 0.9;
+
+            
+            }
+
+           
+
+
+            p {
+                margin-bottom: 1.5rem;
+            }
+
+            .client {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .avatar {
+                    width: 2.5rem;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    
+                    
+
+                }
+            }
+        }
+
+
+    }
+
+    .swiper-pagination-bullet {
+        background: $primary-color;
+    }
+}
+
+
+
+@media screen and (max-width : 600px) {
+    .swiper {
+        .swiper-wrapper {
+            .swiper-slide {
+                padding: 1.5rem;
+            }
+        }
+    }
+}
+
+
