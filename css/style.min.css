@@ -186,7 +186,7 @@ nav .container a{
     }
 }
 header{
-    background:linear-gradient(135deg, #480ca8, #4cc9f0);
+    background:linear-gradient(135deg, #480ca8, #000000);
     color:#fff;
     height:58vh;
     display:grid;
@@ -595,4 +595,5 @@ footer .copyright{
     position:fixed;
     z-index:100
 }
+
 /*# sourceMappingURL=style.min.css.map */
