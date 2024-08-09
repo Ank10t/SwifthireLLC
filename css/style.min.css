@@ -292,7 +292,7 @@ header .container .elevatorR-transition{
 }
 @media screen and (max-width: 1024px){
     header{
-        height:60vh
+        height:auto
     }
     header .container{
         font-size:1.8rem
